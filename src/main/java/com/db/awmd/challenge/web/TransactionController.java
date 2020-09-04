@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.math.BigDecimal;
 
 @RestController
 @RequestMapping("/v1/accounts")
@@ -36,11 +35,11 @@ public class TransactionController {
         try {
             this.transactionService.transferMoney(money);
 
-        } catch (InvalidAccountException inve) {
-            return new ResponseEntity<>(inve.getMessage(), HttpStatus.BAD_REQUEST);
+        } catch (InvalidAccountException inaccex) {
+            return new ResponseEntity<>(inaccex.getMessage(), HttpStatus.BAD_REQUEST);
         }
-        catch (InvalidAmountException invamoe){
-            return new ResponseEntity<>(invamoe.getMessage(), HttpStatus.PAYMENT_REQUIRED);
+        catch (InvalidAmountException inamouex){
+            return new ResponseEntity<>(inamouex.getMessage(), HttpStatus.PAYMENT_REQUIRED);
         }
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
