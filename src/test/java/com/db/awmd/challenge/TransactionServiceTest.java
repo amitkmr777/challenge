@@ -33,7 +33,7 @@ public class TransactionServiceTest {
         transactionService.getTransactionRepository().clearAccounts();
     }
     @Test
-    public void transferMoneyServiceTest() throws Exception{
+    public void transferMoneyServiceTest() {
         Account accountFrom = new Account("Id-120");
         accountFrom.setBalance(new BigDecimal(1000));
         accountsService.createAccount(accountFrom);
@@ -56,7 +56,7 @@ public class TransactionServiceTest {
     }
 
     @Test
-    public void transferMoneyWithZeroBalanceServiceTest() throws Exception{
+    public void transferMoneyWithZeroBalanceServiceTest() {
         Account accountFrom = new Account("Id-124");
         accountFrom.setBalance(new BigDecimal(0));
         this.accountsService.createAccount(accountFrom);
@@ -76,7 +76,7 @@ public class TransactionServiceTest {
         }
     }
     @Test
-    public void transferMoneyWithNoAmountServiceTest() throws Exception{
+    public void transferMoneyWithNoAmountServiceTest() {
         Account accountFrom = new Account("Id-126");
         accountFrom.setBalance(new BigDecimal(1000));
         this.accountsService.createAccount(accountFrom);
@@ -100,7 +100,7 @@ public class TransactionServiceTest {
 
     }
     @Test
-    public void transferMoneyToInvalidAccountServiceTest() throws Exception{
+    public void transferMoneyToInvalidAccountServiceTest() {
         Account accountFrom = new Account("Id-118");
         accountFrom.setBalance(new BigDecimal(1000));
         this.accountsService.createAccount(accountFrom);
